@@ -1,0 +1,154 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+}
+@font-face {
+  font-family: 'Wizard';
+  src: url(./assets/Wizardry\ Night.ttf);
+}
+.app{
+  display:flex;
+  justify-content: center;
+ 
+  align-items: center;
+  min-height: 100vh;
+}
+.card{
+  position:relative;
+  width:320px;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) ;
+}
+.card .poster{
+  position: relative;
+}
+.card .poster::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -180px;
+  background: var(--background);
+  transition: 0.5s;
+  z-index:1;
+}
+.card:hover .poster::before{
+  bottom:0;
+  
+}
+.card .poster img {
+  width:100%;
+  height: 480px;
+  object-fit: cover;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.card:hover .poster img{
+  transform: translateY(-50px);
+  filter:blur(5px);
+}
+.card .details {
+  position:absolute;
+  left:0;
+  bottom: -210px;
+  padding: 20px;
+  width: 100%;
+  transition: 0.5s;
+  z-index: 2;
+}
+.card:hover .details{
+  bottom:40px;
+} 
+.card .details .title{
+  font-family: 'Wizard';
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--color);
+}
+.card .details h3{
+  font-size: 0.8em;
+  color:#fff;
+}
+.card .details .ratings{
+  position: relative;
+  padding:5px 0;
+}
+.card .details .ratings .fa-star{
+  color:#f7f406;
+  font-size: 1.5em;
+}
+.card .details .ratings span{
+  color: #fff;
+  font-size: 1em;
+  margin-left:5px;
+}
+.card .details .tags {
+  position: relative;
+  margin-top: 5px;
+}
+.card .details .tags span {
+    padding:2px 5px;
+    margin: 2px;
+    color:#fff;
+    background:#03a8f5;
+    border-radius: 4px    ;
+} 
+.card .details .tags span:nth-child(2){
+  background: #ff5722;
+}
+.card .details .info{
+  color: #fff;
+  margin-top: 10px;
+}
+.card .details .cast{
+  position:relative;
+}
+.card .details .cast h4{
+  color: #fff;
+  margin-top: 20px;
+}
+.card .details .cast ul{
+  position: relative;
+  display: flex;
+  gap:5px;
+  margin-top: 10px;
+ 
+}
+.card .details .cast ul li {
+  list-style: none;
+  width:35px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 50%;
+  border:2px solid #fff;
+ 
+}
+.card .details .cast ul li img{
+  max-width:100%
+}
+.card .details .next{
+  position:relative;
+  margin-top: 5px;
+  text-align: center;
+} 
+.card .details .next button{
+  height:30px;
+  width: 60px;
+  font-size: 0.9em;
+  border: 2px solid #fff;
+  color: #fff;
+  background: #03a8f5;
+  border-radius: 5px;
+  cursor:pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  
+}.card .details .next button:hover{
+  transform: translateY(-5px);
+}
+
+
+
